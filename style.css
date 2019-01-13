@@ -1,5 +1,5 @@
 /*
-    Theme Name: musical-template
+    Theme Name: mobigroce
     AUthor: Brett Sullivan
     Version: 1.0
 
@@ -1380,6 +1380,7 @@ body.login {
   left: 0;
   right: 0;
   padding: 20px 0;
+  /* font-size: 50%; */
 }
 
 .site-header__avatar {
