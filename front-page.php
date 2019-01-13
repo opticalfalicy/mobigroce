@@ -10,42 +10,37 @@
 <div class="full-width-split group">
   <div class="full-width-split__one">
     <div class="full-width-split__inner">
-      <h2 class="headline headline--small-plus t-center">Upcoming Events</h2>
+      <h2 class="headline headline--small-plus t-center">New Recipes</h2>
 
-      <?php 
-          $today = date('Ymd');
-          $homepageEvents = new WP_Query(array(
-            'posts_per_page' => -1,
-            'post_type' => 'event',
-            'meta_key' => 'event_date',
-            'orderby' => 'meta_value_num',
-            'order' => 'ASC',
-            'meta_query' => array(
-              array(
-                'key' => 'event_date',
-                'compare' => '>=',
-                'value' => $today,
-                'type' => 'numeric'
-              )
-            )
-          ));
 
-          while($homepageEvents->have_posts()) {
-            $homepageEvents->the_post(); ?>
+      <?php
+
+          // $today = date('Ymd');
+          $homepageRecipes = new WP_Query(array(
+            'posts_per_page' => 1,
+            'post_type' => 'recipe',
+            // 'meta_key' => 'recipe_post',
+            // 'orderby' => 'meta_value_num',
+            // 'order' => 'ASC',
+            // 'meta_query' => array(
+              // array(
+                // 'key' => 'recipe_post',
+                // 'compare' => '>=',
+                // 'value' => $today,
+                // 'type' => 'numeric'
+              // )
+            // )
+              ));
+        
+
+        while ($homepageRecipes->have_posts()){
+            $homepageRecipes->the_post() ?>
       <div class="event-summary">
-        <a class="event-summary__date t-center" href="#">
+        <a class="event-summary__date event-summary__date--beige t-center" href="<?php the_permalink(); ?>">
           <span class="event-summary__month">
-            <?php 
-              // the_field('event_date');
-              $eventDate = new DateTime(get_field('event_date', false, false));
-              echo $eventDate->format('M');
-            ?></span>
+            <?php the_time('M'); ?></span>
           <span class="event-summary__day">
-            <?php 
-              $eventDate = new DateTime(get_field('event_date'));
-              echo $eventDate->format('d');
-            ?>
-          </span>
+            <?php the_time('d'); ?></span>
         </a>
         <div class="event-summary__content">
           <h5 class="event-summary__title headline headline--tiny"><a href="<?php the_permalink(); ?>">
@@ -53,20 +48,24 @@
           <p>
             <?php if(has_excerpt()){
               echo get_the_excerpt();
-              // the_excerpt();
-              // echo 'true';
+
             } 
+            else{
+              echo wp_trim_words(get_the_content(), 18);
+            }
             ?>
-            <a href="<?php the_permalink(); ?>" class="nu gray">Learn
+            <a href="<?php the_permalink(); ?>" class="nu gray">Read
               more</a></p>
         </div>
       </div>
-      <?php }
+      <?php } wp_reset_postdata();
         ?>
 
-      <p class="t-center no-margin"><a href="<?php echo site_url('/events');?>" class="btn btn--blue">View All
-          Events</a></p>
 
+
+
+      <p class="t-center no-margin"><a href="<?php echo site_url('/recipes'); ?>" class="btn btn--yellow">View All
+          Recipes</a></p>
     </div>
   </div>
 </div>

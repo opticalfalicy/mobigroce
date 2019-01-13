@@ -27,7 +27,6 @@
 </div>
 
 <div class="container container--narrow page-section">
-  hey
 
   <?php 
 
