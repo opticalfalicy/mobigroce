@@ -31,7 +31,10 @@
 
   <div class="generic-content">
     <?php the_content();?>
-    <?php the_field('ingredients', false, false);?>
+    <?php the_field('ingredients', false, false)
+    
+    
+    ;?>
     <form>
       example
       <input type="checkbox" name="example" label="example" value="no" />
