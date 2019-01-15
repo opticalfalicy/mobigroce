@@ -7,13 +7,13 @@ while(have_posts()){
 ?>
 
 <div class="page-banner">
-  <div class="page-banner__bg-image" style="background-image: url(<?php echo get_theme_file_uri( 'images/ocean.jpg' ) ?>);"></div>
+  <div class="page-banner__bg-image" style="background-image: url(<?php echo get_theme_file_uri( 'images/book.jpeg' ) ?>);"></div>
   <div class="page-banner__content container container--narrow">
-    <h1 class="page-banner__title">
+    <h1 class="page-banner__title page-banner__title--recipes">
       <?php the_title() ?>
     </h1>
     <div class="page-banner__intro">
-      <p>REPLACE ME</p>
+      <!-- <p>REPLACE ME</p> -->
     </div>
   </div>
 </div>

@@ -18,17 +18,18 @@
           // $today = date('Ymd');
           $homepageRecipes = new WP_Query(array(
             'posts_per_page' => 1,
-            'post_type' => 'product',
-            // 'meta_key' => 'recipe_post',
+            // 'post_type' => 'product',
+            'product_cat' => 'recipe'
+            // 'meta_key' => 'recipe',
             // 'orderby' => 'meta_value_num',
             // 'order' => 'ASC',
             // 'meta_query' => array(
-              // array(
-                // 'key' => 'recipe_post',
-                // 'compare' => '>=',
-                // 'value' => $today,
-                // 'type' => 'numeric'
-              // )
+            //   array(
+            //     'key' => 'recipe',
+            //     'compare' => '>=',
+            //     'value' => $today,
+            //     'type' => 'numeric'
+            //   )
             // )
               ));
         
@@ -96,7 +97,8 @@
     <div class="hero-slider__interior container">
       <div class="hero-slider__overlay">
         <h2 class="headline headline--medium t-center">Recipe Bundle</h2>
-        <p class="t-center">Fictional Store offers a new subscription service with the ingredients used in our great
+        <p class="t-center">Fictional Store offers a new subscription service that provides you with the ingredients
+          used in our best
           recipes!</p>
         <p class="t-center no-margin"><a href="#" class="btn btn--blue">Learn more</a></p>
       </div>

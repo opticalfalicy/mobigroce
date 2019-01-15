@@ -1467,6 +1467,10 @@ body.login {
 
 .main-navigation {
   padding-top: 2px;
+  padding-right: 10px;
+  border: 2px solid #e8d0a9;
+  background: #b18948d0;
+  font-size: 120%;
 }
 
 .main-navigation ul {
@@ -1519,7 +1523,20 @@ body.login {
 
 .main-navigation .current-menu-item a,
 .main-navigation a:hover {
-  color: #faf0ca;
+  color: #e8d0a9;
+}
+.main-navigation .current-menu-item a,
+.main-navigation {
+  color: #555142;
+}
+
+.main-navigation a:hover {
+  color: #e8d0a9;
+  text-decoration: underline;
+}
+
+.main-navigation .current-menu-item a:hover {
+  color: #e8d0a9;
 }
 
 .page-banner {
@@ -1570,6 +1587,11 @@ body.login {
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+.page-banner__title--recipes {
+  text-align: right;
+  color: #b18948d0;
 }
 
 .page-banner__intro {
