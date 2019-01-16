@@ -32,6 +32,7 @@
 
   <div class="generic-content">
     <?php the_content();?>
+    <?php the_?>
   </div>
 </div>
 
